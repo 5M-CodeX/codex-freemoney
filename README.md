@@ -1,4 +1,4 @@
-# Code XFreeMoney Resource for FiveM
+# CodeX FreeMoney
 
 This is a simple resource for FiveM that provides a command to give players free money in their bank account. Players can use the `/freemoney` command to receive a specified amount of money once every hour.
 
