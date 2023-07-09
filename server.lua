@@ -13,7 +13,7 @@ RegisterCommand(Config.cmd, function(source, args, rawCommand)
     end
 
     -- Add money to the player's bank
-    NDCore.Functions.AddMoney(Config.moneyAmount, playerId, "bank", "free money")
+    NDCore.Functions.AddMoney(Config.moneyAmount, playerId, "bank", Config.bankStatement)
 
     lastUsedTime[playerId] = currentTime
     TriggerClientEvent("chat:addMessage", playerId, { args = { Config.successMessage } })
