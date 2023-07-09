@@ -1,5 +1,8 @@
 Config = {}
 
+-- Command for free money
+Config.cmd = "freemoney"
+
 -- Cooldown duration in seconds
 Config.cooldownDuration = 3600
 
