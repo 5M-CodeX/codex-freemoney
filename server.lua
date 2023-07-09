@@ -1,19 +1,20 @@
 NDCore = exports["ND_Core"]:GetCoreObject()
-local cooldownDuration = 3600 -- Cooldown duration in seconds
 local lastUsedTime = {}
 
-RegisterCommand("freemoney", function(source, args, rawCommand)
+RegisterCommand(Config.cmd, function(source, args, rawCommand)
     local playerId = source
     local currentTime = os.time()
 
-    if lastUsedTime[playerId] and lastUsedTime[playerId] + cooldownDuration > currentTime then
-        TriggerClientEvent("chat:addMessage", playerId, { args = { "^1You can only use this command once every hour." } })
+    if lastUsedTime[playerId] and lastUsedTime[playerId] + Config.cooldownDuration > currentTime then
+        local remainingCooldown = lastUsedTime[playerId] + Config.cooldownDuration - currentTime
+        local cooldownMessage = string.format(Config.cooldownMessage, remainingCooldown)
+        TriggerClientEvent("chat:addMessage", playerId, { args = { cooldownMessage } })
         return
     end
 
     -- Add money to the player's bank
-    NDCore.Functions.AddMoney(1000, playerId, "bank", "free money") -- Change the amount as needed
+    NDCore.Functions.AddMoney(Config.moneyAmount, playerId, "bank", Config.bankStatement)
 
     lastUsedTime[playerId] = currentTime
-    TriggerClientEvent("chat:addMessage", playerId, { args = { "^2You received some free money!" } })
+    TriggerClientEvent("chat:addMessage", playerId, { args = { Config.successMessage } })
 end, false)

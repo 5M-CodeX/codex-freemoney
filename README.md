@@ -13,12 +13,11 @@ This is a simple resource for FiveM that provides a command to give players free
 5. Start or restart your FiveM server.
 
 ## Usage
-- Players can use the command `/freemoney` in the in-game chat to receive free money.
-- The command can only be used once every hour. If a player tries to use the command within the cooldown period, they will receive a message indicating the remaining time.
+- Players can use the command `/freemoney` (default command) in the in-game chat to receive free money.
+- The command can only be used once every hour (default duration). If a player tries to use the command within the cooldown period, they will receive a message indicating the remaining time.
 
 ## Customization
-- You can modify the amount of money given to players by changing the value in the `NDCore.Functions.AddMoney` function call in `server.lua` file.
-- Adjust the `cooldownDuration` variable to change the cooldown duration in seconds.
+- There's a config file!
 
 ## Contributing
 Contributions are welcome! If you have any suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request.
