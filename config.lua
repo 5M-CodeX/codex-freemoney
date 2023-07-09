@@ -9,6 +9,9 @@ Config.cooldownDuration = 3600
 -- Amount of money to give
 Config.moneyAmount = 1000
 
+-- Bank statement
+Config.bankStatement = "free money"
+
 -- Cooldown message
 Config.cooldownMessage = "^1You can only use this command once every hour. Please wait %d seconds."
 
